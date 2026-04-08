@@ -60,6 +60,20 @@ Go to [src/README.md](src/README.md) for documentation on how to create your own
 
 The Housing Data Coalition hosts their own copy ("instance") of nycdb. If you are not a member of HDC and would like to use it, please contact housingdatacoalition@gmail.com
 
+
+### Morphing cross-agency GUI concept
+
+A modern front-end concept for "morphing" building analysis is available at `src/nycdb/morphing_gui`.
+
+Run it locally:
+
+```bash
+cd src/nycdb/morphing_gui
+python3 server.py
+```
+
+Then open <http://127.0.0.1:8080>.
+
 ### Acknowledgments
 
 - [Heatseek](https://heatseek.org/) for ongoing support of the project and for their amazing work.

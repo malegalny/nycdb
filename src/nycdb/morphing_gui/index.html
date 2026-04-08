@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NYCDB Morphing Agency Intelligence</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">NYCDB · AI Orchestration Demo</p>
+          <h1>Morphing Building Intelligence</h1>
+        </div>
+        <div class="status-pill" id="syncStatus">Idle</div>
+      </header>
+
+      <main class="layout">
+        <section class="left-panel glass">
+          <form id="analysisForm" class="analysis-form">
+            <label for="buildingId">Building Identifier</label>
+            <div class="row">
+              <input id="buildingId" name="buildingId" type="text" placeholder="Try 10026-1-0089 or 350 5TH AVE" required />
+              <button type="submit">Analyze</button>
+            </div>
+          </form>
+
+          <div class="metrics">
+            <article>
+              <span>AI Confidence</span>
+              <strong id="confidenceValue">0%</strong>
+            </article>
+            <article>
+              <span>Cross-Agency Coverage</span>
+              <strong id="coverageValue">0 / 8</strong>
+            </article>
+            <article>
+              <span>Distress Signal</span>
+              <strong id="distressValue">Low</strong>
+            </article>
+          </div>
+
+          <div class="morph-zone" id="morphZone" aria-label="Morphing building profile">
+            <svg viewBox="0 0 600 600" role="img">
+              <defs>
+                <radialGradient id="shapeGradient" cx="50%" cy="40%" r="70%">
+                  <stop offset="0%" stop-color="#73f4ff" />
+                  <stop offset="100%" stop-color="#6a5cff" />
+                </radialGradient>
+              </defs>
+              <path id="morphShape" fill="url(#shapeGradient)" d="M300,120 C380,80 480,140 500,230 C525,335 470,470 355,498 C250,525 135,470 103,362 C65,235 145,145 230,126 C255,120 275,128 300,120 Z"/>
+            </svg>
+            <div class="morph-caption" id="morphCaption">Awaiting analysis…</div>
+          </div>
+        </section>
+
+        <section class="right-panel glass">
+          <div class="panel-head">
+            <h2>Agency Signals</h2>
+            <p>Live blend of city datasets as AI extracts building-level risk and opportunity patterns.</p>
+          </div>
+          <div id="agencyGrid" class="agency-grid"></div>
+          <div class="timeline">
+            <h3>Inference Timeline</h3>
+            <ul id="timelineList"></ul>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <template id="agencyCardTemplate">
+      <article class="agency-card">
+        <header>
+          <h4></h4>
+          <span class="agency-score"></span>
+        </header>
+        <p class="agency-signal"></p>
+        <div class="progress-track"><div class="progress-fill"></div></div>
+      </article>
+    </template>
+
+    <script src="./app.js" type="module"></script>
+  </body>
+</html>
