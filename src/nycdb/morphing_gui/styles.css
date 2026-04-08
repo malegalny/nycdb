@@ -1,0 +1,220 @@
+:root {
+  color-scheme: dark;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --bg: #080b1a;
+  --panel: rgba(17, 22, 42, 0.7);
+  --line: rgba(186, 202, 255, 0.2);
+  --text: #e6ecff;
+  --muted: #97a3cf;
+  --ok: #5ef2b0;
+  --warn: #ffd36a;
+  --high: #ff6f91;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 10% 10%, rgba(96, 86, 255, 0.45), transparent 40%),
+    radial-gradient(circle at 90% 20%, rgba(35, 209, 255, 0.35), transparent 45%),
+    var(--bg);
+  color: var(--text);
+}
+
+.app-shell {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.topbar {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  margin: 0 0 0.5rem;
+}
+
+h1, h2, h3, h4, p { margin: 0; }
+
+h1 { font-size: clamp(1.4rem, 3vw, 2.2rem); }
+
+.status-pill {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0.5rem 0.85rem;
+  color: var(--muted);
+}
+
+.layout {
+  margin-top: 1.5rem;
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 1rem;
+}
+
+.glass {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 1rem;
+  backdrop-filter: blur(14px);
+}
+
+.analysis-form label {
+  display: block;
+  color: var(--muted);
+  margin-bottom: 0.5rem;
+}
+
+.row { display: flex; gap: 0.65rem; }
+input {
+  flex: 1;
+  background: rgba(6, 9, 20, 0.75);
+  border: 1px solid var(--line);
+  color: var(--text);
+  border-radius: 12px;
+  padding: 0.8rem;
+}
+
+button {
+  border: none;
+  border-radius: 12px;
+  padding: 0.8rem 1rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #20d8ff, #7e6fff);
+  color: #050611;
+  cursor: pointer;
+}
+
+.metrics {
+  margin: 1rem 0;
+  display: grid;
+  gap: 0.6rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.metrics article {
+  background: rgba(4, 8, 23, 0.6);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 0.7rem;
+}
+
+.metrics span {
+  color: var(--muted);
+  display: block;
+  margin-bottom: 0.3rem;
+  font-size: 0.82rem;
+}
+
+.morph-zone {
+  position: relative;
+  border-radius: 16px;
+  border: 1px solid var(--line);
+  min-height: 360px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: radial-gradient(circle at 20% 20%, rgba(41, 229, 255, 0.25), rgba(17, 25, 53, 0.5));
+}
+
+.morph-zone svg {
+  width: min(92%, 460px);
+  filter: drop-shadow(0 22px 40px rgba(0, 0, 0, 0.35));
+}
+
+.morph-caption {
+  position: absolute;
+  bottom: 0.9rem;
+  left: 0.9rem;
+  right: 0.9rem;
+  color: var(--text);
+  padding: 0.7rem;
+  border-radius: 10px;
+  background: rgba(4, 8, 24, 0.72);
+  border: 1px solid var(--line);
+}
+
+.panel-head p {
+  margin-top: 0.5rem;
+  color: var(--muted);
+}
+
+.agency-grid {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.6rem;
+}
+
+.agency-card {
+  background: rgba(4, 8, 20, 0.6);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 0.65rem;
+}
+
+.agency-card header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.4rem;
+}
+
+.agency-signal {
+  color: var(--muted);
+  font-size: 0.88rem;
+  min-height: 2.4em;
+}
+
+.progress-track {
+  height: 7px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  margin-top: 0.55rem;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 0;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--ok), #35a5ff, #9b7dff);
+  transition: width 280ms ease;
+}
+
+.timeline {
+  margin-top: 1rem;
+  border-top: 1px solid var(--line);
+  padding-top: 0.8rem;
+}
+
+.timeline ul {
+  margin: 0.7rem 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.45rem;
+}
+
+.timeline li {
+  color: #c6cff4;
+  font-size: 0.9rem;
+  padding: 0.45rem 0.55rem;
+  border-radius: 8px;
+  background: rgba(8, 12, 30, 0.6);
+}
+
+@media (max-width: 980px) {
+  .layout { grid-template-columns: 1fr; }
+  .metrics { grid-template-columns: 1fr; }
+  .agency-grid { grid-template-columns: 1fr; }
+}
